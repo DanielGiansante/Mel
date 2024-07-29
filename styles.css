@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #ffefd5; /* Light pink background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.flower {
+    position: absolute;
+    bottom: -50px; /* Start below the screen */
+    width: 100px;
+    height: 100px;
+    background: url('https://static.vecteezy.com/system/resources/previews/011/098/199/non_2x/watercolor-flowers-bouquet-with-blue-roses-and-green-leaves-illustration-png.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0;
+    animation: floatUp 10s infinite ease-in-out;
+    z-index: 999999;
+}
+
+.flower:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.flower:nth-child(3) {
+    animation-delay: 4s;
+}
+
+.flower:nth-child(4) {
+    animation-delay: 6s;
+}
+
+.flower:nth-child(5) {
+    animation-delay: 8s;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-300px) scale(1);
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-600px) scale(0.5);
+        opacity: 0;
+    }
+}
+
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.card h1 {
+    margin-top: 0;
+    font-size: 2em;
+    color: #ff69b4;
+}
+
+.card p {
+    font-size: 1.2em;
+    color: #333;
+    line-height: 1.5;
+}
